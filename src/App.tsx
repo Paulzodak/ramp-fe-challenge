@@ -46,7 +46,7 @@ export function App() {
       loadAllTransactions()
     }
   }, [employeeUtils.loading, employees, loadAllTransactions])
-  console.log(EMPTY_EMPLOYEE)
+  // console.log(EMPTY_EMPLOYEE)
   return (
     <Fragment>
       <main className="MainContainer">
