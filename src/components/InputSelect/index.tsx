@@ -60,6 +60,7 @@ export function InputSelect<TItem>({
               className="RampInputSelect--input"
               onClick={(event) => {
                 setDropdownPosition(getDropdownPosition(event.target))
+                console.log(event)
                 toggleProps.onClick(event)
               }}
             >
@@ -71,7 +72,8 @@ export function InputSelect<TItem>({
                 "RampInputSelect--dropdown-container-opened": isOpen,
               })}
               {...getMenuProps()}
-              style={{ top: dropdownPosition.top, left: dropdownPosition.left }}
+              // style={{ top: dropdownPosition.top, left: dropdownPosition.left }}
+              style={{}}
             >
               {renderItems()}
             </div>
