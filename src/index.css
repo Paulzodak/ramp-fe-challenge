@@ -81,6 +81,7 @@ hr.RampBreak--l {
 
 .RampInputSelect--root {
   width: 100%;
+  position: relative;
 }
 
 .RampInputSelect--input {
@@ -105,6 +106,9 @@ hr.RampBreak--l {
 
 .RampInputSelect--dropdown-container-opened {
   display: block;
+  position: absolute;
+  width: 100%;
+  z-index: 30;
 }
 
 .RampInputSelect--dropdown-item {
@@ -124,7 +128,7 @@ hr.RampBreak--l {
 
 .RampInputCheckbox--container {
   display: flex;
-  background-color: red;
+  /* background-color: blue; */
   position: relative;
 }
 
