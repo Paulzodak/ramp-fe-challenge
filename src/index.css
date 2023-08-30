@@ -124,6 +124,8 @@ hr.RampBreak--l {
 
 .RampInputCheckbox--container {
   display: flex;
+  background-color: red;
+  position: relative;
 }
 
 .RampInputCheckbox--label {
@@ -151,7 +153,14 @@ hr.RampBreak--l {
 }
 
 .RampInputCheckbox--input {
-  display: none;
+  /* display: none; */
+  position: absolute;
+  top: 0;
+  /* z-index: -10; */
+  /* background-color: transparent; */
+  opacity: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .RampButton {
