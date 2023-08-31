@@ -9,16 +9,21 @@ export function usePaginatedTransactions(): PaginatedTransactionsResult {
     Transaction[]
   > | null>(null)
   // console.log("paginatedTransactions", paginatedTransactions)
+
   const fetchAll = useCallback(async () => {
+    // if (paginatedTransactions?.data && paginatedTransactions?.nextPage == null) {
+    //   return
+    // }
     const response = await fetchWithCache<PaginatedResponse<Transaction[]>, PaginatedRequestParams>(
       "paginatedTransactions",
       {
         page: paginatedTransactions === null ? 0 : paginatedTransactions.nextPage,
       }
     )
-
+    console.log("response", response)
     setPaginatedTransactions((previousResponse) => {
       // console.log(previousResponse)
+      // console.log("response", response)
       if (response === null || previousResponse === null) {
         return response
       }

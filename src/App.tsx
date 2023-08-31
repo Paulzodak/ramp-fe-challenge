@@ -37,7 +37,7 @@ export function App() {
       paginatedTransactionsUtils.invalidateData()
       await transactionsByEmployeeUtils.fetchById(employeeId)
     },
-    [paginatedTransactionsUtils, transactionsByEmployeeUtils]
+    [paginatedTransactionsUtils, loadAllTransactions, transactionsByEmployeeUtils]
   )
 
   useEffect(() => {
@@ -46,7 +46,7 @@ export function App() {
     }
   }, [employeeUtils.loading, employees, loadAllTransactions])
   // console.log(EMPTY_EMPLOYEE)
-  console.log("isLoading", isLoading)
+  // console.log("paginatedTransactions", paginatedTransactions)
   return (
     <Fragment>
       <main className="MainContainer">
@@ -78,7 +78,7 @@ export function App() {
         <div className="RampGrid">
           <Transactions transactions={transactions} />
 
-          {transactions !== null && (
+          {paginatedTransactions?.nextPage != null && (
             <button
               className="RampButton"
               disabled={paginatedTransactionsUtils.loading}
